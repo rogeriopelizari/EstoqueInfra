@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EstoqueInfraModelStoreContainer" CdmEntityContainer="EstoqueInfraEntities">
+    <EntitySetMapping Name="celulares">
+      <EntityTypeMapping TypeName="EstoqueInfraModel.celulare">
+        <MappingFragment StoreEntitySet="celulares">
+          <ScalarProperty Name="imei" ColumnName="imei" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="antigocolabcel" ColumnName="antigocolabcel" />
+          <ScalarProperty Name="atualcolabcel" ColumnName="atualcolabcel" />
+          <ScalarProperty Name="dtacompracel" ColumnName="dtacompracel" />
+          <ScalarProperty Name="statuscel" ColumnName="statuscel" />
+          <ScalarProperty Name="estadocel" ColumnName="estadocel" />
+          <ScalarProperty Name="obscel" ColumnName="obscel" />
+          <ScalarProperty Name="idcel" ColumnName="idcel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="funcionarios">
+      <EntityTypeMapping TypeName="EstoqueInfraModel.funcionario">
+        <MappingFragment StoreEntitySet="funcionarios">
+          <ScalarProperty Name="matricula" ColumnName="matricula" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="tipoct365" ColumnName="tipoct365" />
+          <ScalarProperty Name="cargo" ColumnName="cargo" />
+          <ScalarProperty Name="setor" ColumnName="setor" />
+          <ScalarProperty Name="gestor" ColumnName="gestor" />
+          <ScalarProperty Name="dtadmissao" ColumnName="dtadmissao" />
+          <ScalarProperty Name="dtdemissao" ColumnName="dtdemissao" />
+          <ScalarProperty Name="statad" ColumnName="statad" />
+          <ScalarProperty Name="statjira" ColumnName="statjira" />
+          <ScalarProperty Name="statconflu" ColumnName="statconflu" />
+          <ScalarProperty Name="statslack" ColumnName="statslack" />
+          <ScalarProperty Name="door" ColumnName="door" />
+          <ScalarProperty Name="ponto" ColumnName="ponto" />
+          <ScalarProperty Name="statusf" ColumnName="statusf" />
+          <ScalarProperty Name="idfunc" ColumnName="idfunc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="linhas">
+      <EntityTypeMapping TypeName="EstoqueInfraModel.linha">
+        <MappingFragment StoreEntitySet="linhas">
+          <ScalarProperty Name="simcard" ColumnName="simcard" />
+          <ScalarProperty Name="numlinha" ColumnName="numlinha" />
+          <ScalarProperty Name="operadora" ColumnName="operadora" />
+          <ScalarProperty Name="antigocolablinha" ColumnName="antigocolablinha" />
+          <ScalarProperty Name="atualcolablinha" ColumnName="atualcolablinha" />
+          <ScalarProperty Name="statuslinha" ColumnName="statuslinha" />
+          <ScalarProperty Name="obslinha" ColumnName="obslinha" />
+          <ScalarProperty Name="idlin" ColumnName="idlin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logins">
+      <EntityTypeMapping TypeName="EstoqueInfraModel.login">
+        <MappingFragment StoreEntitySet="logins">
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="maquinas">
+      <EntityTypeMapping TypeName="EstoqueInfraModel.maquina">
+        <MappingFragment StoreEntitySet="maquinas">
+          <ScalarProperty Name="patrimonio" ColumnName="patrimonio" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="servtag" ColumnName="servtag" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="numserie" ColumnName="numserie" />
+          <ScalarProperty Name="statusd" ColumnName="statusd" />
+          <ScalarProperty Name="estadod" ColumnName="estadod" />
+          <ScalarProperty Name="procd" ColumnName="procd" />
+          <ScalarProperty Name="memoriad" ColumnName="memoriad" />
+          <ScalarProperty Name="hdd" ColumnName="hdd" />
+          <ScalarProperty Name="antcolab" ColumnName="antcolab" />
+          <ScalarProperty Name="atualcolab" ColumnName="atualcolab" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="dtacompra" ColumnName="dtacompra" />
+          <ScalarProperty Name="dtatroca" ColumnName="dtatroca" />
+          <ScalarProperty Name="idmaq" ColumnName="idmaq" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="monitores">
+      <EntityTypeMapping TypeName="EstoqueInfraModel.monitore">
+        <MappingFragment StoreEntitySet="monitores">
+          <ScalarProperty Name="patrimonio" ColumnName="patrimonio" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="numserie" ColumnName="numserie" />
+          <ScalarProperty Name="statusd" ColumnName="statusd" />
+          <ScalarProperty Name="estadod" ColumnName="estadod" />
+          <ScalarProperty Name="antcolab" ColumnName="antcolab" />
+          <ScalarProperty Name="atualcolab" ColumnName="atualcolab" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="dtacompra" ColumnName="dtacompra" />
+          <ScalarProperty Name="idmon" ColumnName="idmon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
