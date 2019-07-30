@@ -206,7 +206,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Imagens\logonavita35x35_transparent.png" />
-    <Content Include="Content\Imagens\oie_transparent.png" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
