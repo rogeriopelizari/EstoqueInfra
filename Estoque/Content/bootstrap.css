@@ -10034,5 +10034,14 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+
+ .image.navita.bkg {
+        background-image: url("../Content/Imagens/logonavita-1.png"); /* The image used */
+        width: 100%; /* You must set a specified height */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+ }
+
 }
 /*# sourceMappingURL=bootstrap.css.map */

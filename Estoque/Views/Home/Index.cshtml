@@ -10,15 +10,15 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title> Index </title>
+    <title> Principal </title>
+    <link href="~/Content/background.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        <h1> Dashboard </h1>
-        <h3> Usuário Logado : @Session["usuario"].ToString() </h3>
-        <a href="@Url.Action("LogOut","Login")"> Logout </a>
-
-    </div>
+        <div>
+            <h1> Dashboard </h1>
+            <h3> Usuário Logado : @Session["usuario"].ToString() </h3>
+            <a href="@Url.Action("LogOut","Login")"> Logout </a>
+        </div>
 </body>
 </html>
 

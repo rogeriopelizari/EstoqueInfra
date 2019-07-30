@@ -36,3 +36,7 @@ C:\Users\rogerio.pelizari\source\repos\Estoque\Estoque.Tests\obj\Debug\Estoque.T
 C:\Users\rogerio.pelizari\source\repos\Estoque\Estoque.Tests\obj\Debug\Estoque.Tests.csproj.CopyComplete
 C:\Users\rogerio.pelizari\source\repos\Estoque\Estoque.Tests\obj\Debug\Estoque.Tests.dll
 C:\Users\rogerio.pelizari\source\repos\Estoque\Estoque.Tests\obj\Debug\Estoque.Tests.pdb
+C:\Users\rogerio.pelizari\source\repos\rogeriopelizari\EstoqueInfra\Estoque.Tests\obj\Debug\Estoque.Tests.csprojAssemblyReference.cache
+C:\Users\rogerio.pelizari\source\repos\rogeriopelizari\EstoqueInfra\Estoque.Tests\obj\Debug\Estoque.Tests.csproj.CoreCompileInputs.cache
+C:\Users\rogerio.pelizari\source\repos\rogeriopelizari\EstoqueInfra\Estoque.Tests\obj\Debug\Estoque.Tests.dll
+C:\Users\rogerio.pelizari\source\repos\rogeriopelizari\EstoqueInfra\Estoque.Tests\obj\Debug\Estoque.Tests.pdb
