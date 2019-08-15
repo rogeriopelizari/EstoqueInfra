@@ -9,46 +9,495 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
     <title> Principal </title>
-    <link href="~/Content/background.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        /* Chart.js */
+    </style>
+
 </head>
-<body>
-        <div>
-            <h1> Dashboard </h1>
-            <h3> Usuário Logado : @Session["usuario"].ToString() </h3>
-            <a href="@Url.Action("LogOut","Login")"> Logout </a>
+<body class="fixed-sn white-skin">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cadastros<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Máquinas</a></li>
+                        <li><a href="#">Colaboradores</a></li>
+                        <li><a href="#">Celulares</a></li>
+                        <li><a href="#">Linhas</a></li>
+                        <li><a href="#">Monitores</a></li>
+                    </ul>
+                </li>
+            </ul>
+                <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">
+    <span class="glyphicon glyphicon-user"></span> Usuário 
+          <p> @Session["usuario"].ToString() </p>  </a></li>
+      <li><a href="@Url.Action("LogOut","Login")"><span class="glyphicon glyphicon-log-in"></span> Logout </a></li>
+    </ul>
         </div>
+    </nav>
+
+    <div class="container">
+        <h3>Navbar With Dropdown</h3>
+    </div>
+
 </body>
 </html>
 
 
 @*
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Home</a>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <!-- Links -->
+        <ul class="navbar-nav">
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbardrop">
+                    Cadastros
+                </a>
+                <div class="dropdown-menu">
+
+                    <a class="dropdown-item" href="#">Máquinas</a>
+                    <a class="dropdown-item" href="#">Colaboradores</a>
+                    <a class="dropdown-item" href="#">Celulares</a>
+                    <a class="dropdown-item" href="#">Linhas</a>
+                    <a class="dropdown-item" href="#">Monitores</a>
+
+                </div>
+            </li>
+        </ul>
+    </nav>
+*@
+
+@*
+        <!--Navbar -->
+            <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
+                @* <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+            aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">
+                    Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+
+            <li class="dropdown">
+
+                <a class=" nav-link dropdown-toggle" data-toggle="dropdown">Cadastros </a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="#">Máquinas</a></li>
+                    <li><a href="#">Colaboradores</a></li>
+                    <li><a href="#">Celulares</a></li>
+                    <li><a href="#">Linhas</a></li>
+                    <li><a href="#">Monitores</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item">
+                <a class="nav-link waves-effect waves-light">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-effect waves-light">
+                    <i class="fab fa-google-plus-g"></i>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                     aria-labelledby="navbarDropdownMenuLink-333">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+        </nav>
+    <!--/.Navbar -->
+*@
+
+
+@*
+
+
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color main-navbar">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+                            aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Cadastros
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto nav-flex-icons">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-user"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                                     aria-labelledby="navbarDropdownMenuLink-333">
+                                    <a class="dropdown-item" href="@Url.Action("LogOut","Login")">Sair</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <br />
+                <br />
+                <br />
+            </div>
+*@
+
+
+@*
+    <div class="pos-f-t">
+         <div class="collapse" id="navbarToggleExternalContent">
+             <div class="bg-dark p-4">
+                 <h5 class="text-white h4">Collapsed content</h5>
+                 <span class="text-muted">Toggleable via the navbar brand.</span>
+             </div>
+         </div>
+         <nav class="navbar navbar-dark bg-dark">
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+         </nav>
+     </div>
+*@
+
+
+
+
+@*
+    <div class="bg">
+        <div class="text">
+            <p> Usuário Logado : @Session["usuario"].ToString() </p>
+            <a href="@Url.Action("LogOut","Login")"> Logout </a>
         </div>
     </div>
 *@
+
+
+@*
+    <body class="fixed-sn cyan-skin">
+
+        <!--Double navigation-->
+        <header>
+          <!-- Sidebar navigation -->
+          <div id="slide-out" class="side-nav sn-bg-4 fixed">
+            <ul class="custom-scrollbar">
+              <!-- Logo -->
+              <li>
+                <div class="logo-wrapper waves-light">
+                  <a href="#"><img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center"></a>
+                </div>
+              </li>
+              <!--/. Logo -->
+              <!--Social-->
+              <li>
+                <ul class="social">
+                  <li><a href="#" class="icons-sm fb-ic"><i class="fab fa-facebook-f"> </i></a></li>
+                  <li><a href="#" class="icons-sm pin-ic"><i class="fab fa-pinterest"> </i></a></li>
+                  <li><a href="#" class="icons-sm gplus-ic"><i class="fab fa-google-plus-g"> </i></a></li>
+                  <li><a href="#" class="icons-sm tw-ic"><i class="fab fa-twitter"> </i></a></li>
+                </ul>
+              </li>
+              <!--/Social-->
+              <!--Search Form-->
+              <li>
+                <form class="search-form" role="search">
+                  <div class="form-group md-form mt-0 pt-1 waves-light">
+                    <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                </form>
+              </li>
+              <!--/.Search Form-->
+              <!-- Side navigation links -->
+              <li>
+                <ul class="collapsible collapsible-accordion">
+                  <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-chevron-right"></i> Submit blog<i
+                        class="fas fa-angle-down rotate-icon"></i></a>
+                    <div class="collapsible-body">
+                      <ul class="list-unstyled">
+                        <li><a href="#" class="waves-effect">Submit listing</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Registration form</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-hand-pointer"></i> Instruction<i
+                        class="fas fa-angle-down rotate-icon"></i></a>
+                    <div class="collapsible-body">
+                      <ul class="list-unstyled">
+                        <li><a href="#" class="waves-effect">For bloggers</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">For authors</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-eye"></i> About<i class="fas fa-angle-down rotate-icon"></i></a>
+                    <div class="collapsible-body">
+                      <ul class="list-unstyled">
+                        <li><a href="#" class="waves-effect">Introduction</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Monthly meetings</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li><a class="collapsible-header waves-effect arrow-r"><i class="far fa-envelope"></i> Contact me<i class="fas fa-angle-down rotate-icon"></i></a>
+                    <div class="collapsible-body">
+                      <ul class="list-unstyled">
+                        <li><a href="#" class="waves-effect">FAQ</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Write a message</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">FAQ</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Write a message</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">FAQ</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Write a message</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">FAQ</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Write a message</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <!--/. Side navigation links -->
+            </ul>
+            <div class="sidenav-bg mask-strong"></div>
+          </div>
+          <!--/. Sidebar navigation -->
+          <!-- Navbar -->
+          <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+            <!-- SideNav slide-out button -->
+            <div class="float-left">
+              <a href="#" data-activates="slide-out" class="button-collapse black-text"><i class="fas fa-bars"></i></a>
+            </div>
+            <!-- Breadcrumb-->
+            <div class="breadcrumb-dn mr-auto">
+              <p>Material Design for Bootstrap</p>
+            </div>
+            <ul class="nav navbar-nav nav-flex-icons ml-auto">
+              <li class="nav-item">
+                <a class="nav-link"><i class="fas fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block">Contact</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"><i class="fas fa-comments"></i> <span class="clearfix d-none d-sm-inline-block">Support</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"><i class="fas fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Account</span></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <!-- /.Navbar -->
+        </header>
+        <!--/.Double navigation-->
+
+        <!--Main layout-->
+        <main>
+
+          <div class="container-fluid text-center">
+
+            <!--Card-->
+            <div class="card card-cascade wider reverse my-4 pb-5">
+
+              <!--Card image-->
+              <div class="view view-cascade overlay wow fadeIn">
+                <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(52).jpg" class="img-fluid">
+                <a href="#!">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <!--/Card image-->
+
+              <!--Card content-->
+              <div class="card-body card-body-cascade text-center wow fadeIn" data-wow-delay="0.2s">
+                <!--Title-->
+                <h4 class="card-title"><strong>My adventure</strong></h4>
+                <h5 class="blue-text"><strong>Photography</strong></h5>
+
+                <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque
+                  laudantium, totam rem aperiam.
+                </p>
+
+                <a class="btn btn-primary btn-lg">Primary button</a>
+                <a class="btn btn-secondary btn-lg">Secondary button</a>
+                <a class="btn btn-default btn-lg">Default button</a>
+
+              </div>
+              <!--/.Card content-->
+
+            </div>
+            <!--/.Card-->
+
+          </div>
+
+        </main>
+        <!--/Main layout-->
+
+        <!--Footer-->
+        <footer class="page-footer text-center text-md-left pt-4">
+
+          <!--Footer Links-->
+          <div class="container-fluid">
+            <div class="row">
+
+              <!--First column-->
+              <div class="col-md-3">
+                <h5 class="text-uppercase font-weight-bold mb-4">Footer Content</h5>
+                <p>Here you can use rows and columns here to organize your footer content.</p>
+              </div>
+              <!--/.First column-->
+
+              <hr class="w-100 clearfix d-md-none">
+
+              <!--Second column-->
+              <div class="col-md-2 mx-auto">
+                <h5 class="text-uppercase font-weight-bold mb-4">Links</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#!">Link 1</a></li>
+                  <li><a href="#!">Link 2</a></li>
+                  <li><a href="#!">Link 3</a></li>
+                  <li><a href="#!">Link 4</a></li>
+                </ul>
+              </div>
+              <!--/.Second column-->
+
+              <hr class="w-100 clearfix d-md-none">
+
+              <!--Third column-->
+              <div class="col-md-2 mx-auto">
+                <h5 class="text-uppercase font-weight-bold mb-4">Links</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#!">Link 1</a></li>
+                  <li><a href="#!">Link 2</a></li>
+                  <li><a href="#!">Link 3</a></li>
+                  <li><a href="#!">Link 4</a></li>
+                </ul>
+              </div>
+              <!--/.Third column-->
+
+              <hr class="w-100 clearfix d-md-none">
+
+              <!--Fourth column-->
+              <div class="col-md-2 mx-auto">
+                <h5 class="text-uppercase font-weight-bold mb-4">Links</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#!">Link 1</a></li>
+                  <li><a href="#!">Link 2</a></li>
+                  <li><a href="#!">Link 3</a></li>
+                  <li><a href="#!">Link 4</a></li>
+                </ul>
+              </div>
+              <!--/.Fourth column-->
+
+            </div>
+          </div>
+          <!--/.Footer Links-->
+
+          <hr>
+
+          <!--Call to action-->
+          <div class="call-to-action text-center my-4">
+            <ul class="list-unstyled list-inline">
+              <li class="list-inline-item">
+                <h5>Register for free</h5>
+              </li>
+              <li class="list-inline-item"><a href="" class="btn btn-primary">Sign up!</a></li>
+            </ul>
+          </div>
+          <!--/.Call to action-->
+
+          <hr>
+
+        <!--Social buttons-->
+        <div class="social-section text-center">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item"><a class="btn-floating btn-fb"><i class="fab fa-facebook-f"> </i></a></li>
+            <li class="list-inline-item"><a class="btn-floating btn-tw"><i class="fab fa-twitter"> </i></a></li>
+            <li class="list-inline-item"><a class="btn-floating btn-gplus"><i class="fab fa-google-plus-g"> </i></a></li>
+            <li class="list-inline-item"><a class="btn-floating btn-li"><i class="fab fa-linkedin-in"> </i></a></li>
+            <li class="list-inline-item"><a class="btn-floating btn-git"><i class="fab fa-github"> </i></a></li>
+          </ul>
+        </div>
+        <!--/.Social buttons-->
+
+          <!--Copyright-->
+          <div class="footer-copyright py-3 text-center">
+            <div class="container-fluid">
+              © 2018 Copyright: <a href="http://www.MDBootstrap.com"> MDBootstrap.com </a>
+
+            </div>
+          </div>
+          <!--/.Copyright-->
+
+        </footer>
+        <!--/.Footer-->
+
+      </body>
+*@
+
+
+

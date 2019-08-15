@@ -84,7 +84,7 @@ a {
 
         .dropdown-list .dropdown-item:active .dropdown-item-desc,
         .dropdown-list .dropdown-item:active .dropdown-item-desc b {
-            color: #fff;
+            color: #000;
         }
 
         .dropdown-list .dropdown-item.dropdown-item-unread {
@@ -241,7 +241,7 @@ a {
     right: 5px;
     position: absolute;
     z-index: 890;
-    background-color: transparent;
+    background-color: #000;
 }
 
     .navbar.active {
@@ -271,13 +271,13 @@ a {
 
 .navbar .form-inline .btn {
     border-radius: 0 30px 30px 0;
-    background-color: #fff;
+    background-color: #000;
     padding: 9px 15px 9px 15px;
     border-color: transparent;
 }
 
 .navbar .nav-link {
-    color: #fff;
+    color: #000;
     padding-left: 10px !important;
     padding-right: 10px !important;
 }
@@ -315,12 +315,12 @@ a {
 }
 
 .navbar .nav-link:hover {
-    color: #fff;
+    color: #000;
     opacity: .8;
 }
 
 .navbar .nav-link.disabled {
-    color: #fff;
+    color: #000;
     opacity: .6;
 }
 /* end navbar */
@@ -460,7 +460,7 @@ a {
     height: 100%;
     width: 250px;
     z-index: 880;
-    background-color: #fff;
+    background-color: #000;
     -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, .05);
     box-shadow: 0 0 40px rgba(0, 0, 0, .05);
 }

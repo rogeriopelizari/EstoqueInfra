@@ -199,6 +199,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\background.css" />
+    <Content Include="Content\bootstrap-datepicker3.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -206,8 +207,14 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\darksiderbar.css" />
+    <Content Include="Content\demo.css" />
+    <Content Include="Content\fontawesome-all.min.css" />
+    <Content Include="Content\flag-icon.min.css" />
     <Content Include="Content\Imagens\logonavita-1.png" />
     <Content Include="Content\Imagens\logonavita35x35_transparent.png" />
+    <Content Include="Content\ionicons.min.css" />
+    <Content Include="Content\lite.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -267,6 +274,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\navbar.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -286,8 +294,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -299,6 +305,11 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Cadastros\Maquinas.cshtml" />
+    <Content Include="Views\Cadastros\Colaboradores.cshtml" />
+    <Content Include="Views\Cadastros\Monitores.cshtml" />
+    <Content Include="Views\Cadastros\Celulares.cshtml" />
+    <Content Include="Views\Cadastros\Linhas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

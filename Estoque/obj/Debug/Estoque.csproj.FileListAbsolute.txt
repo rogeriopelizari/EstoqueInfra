@@ -187,3 +187,4 @@ C:\Users\rogerio.pelizari\source\repos\rogeriopelizari\EstoqueInfra\Estoque\obj\
 C:\Users\rogerio.pelizari\source\repos\rogeriopelizari\EstoqueInfra\Estoque\obj\Debug\Estoque.csproj.CopyComplete
 C:\Users\rogerio.pelizari\source\repos\rogeriopelizari\EstoqueInfra\Estoque\obj\Debug\Estoque.dll
 C:\Users\rogerio.pelizari\source\repos\rogeriopelizari\EstoqueInfra\Estoque\obj\Debug\Estoque.pdb
+C:\Users\rogerio.pelizari\source\repos\rogeriopelizari\EstoqueInfra\Estoque\obj\Debug\Estoque.csprojAssemblyReference.cache
