@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Estoque",
-    "\\Estoque\\Models",
-    "\\Estoque\\Views",
     "\\Estoque\\Views\\Cadastros"
   ],
+  "SelectedNode": "\\Estoque\\Views",
   "PreviewInSolutionExplorer": false
 }
