@@ -1,0 +1,147 @@
+﻿@model Estoque.Models.MaquinaModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MaquinaModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Patrimonio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patrimonio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modelo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servtag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servtag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numserie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numserie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Proc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Antcolab)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Antcolab)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Atualcolab)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Atualcolab)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dtacompra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dtacompra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dtatroca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dtatroca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Obs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Obs)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,126 @@
+﻿@* @model IEnumerable<Estoque.Models.CelularModel>  *@
+
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Estoque.Models.CelularModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutTelaPrincipal.cshtml";
+}
+
+@*<h2> Index </h2> *@
+
+<p>
+    @Html.ActionLink("Novo Cadastro", "Create") | @Html.ActionLink("Home", "Index", "Home")
+</p>
+
+<section class="section">
+    <div class="container body-content">
+        <div class="row">
+            <table class="table table-bordered">
+                <tr>
+                    <th>
+                        @Html.DisplayName("Imei")
+                        @* @Html.DisplayNameFor(model => model.Imei)  *@
+                    </th>
+                    <th>
+                        @Html.DisplayName("Marca")
+                        @* @Html.DisplayNameFor(model => model.Marca)  *@
+                    </th>
+                    <th>
+                        @Html.DisplayName("Marca")
+                        @* @Html.DisplayNameFor(model => model.Modelo)  *@
+                    </th>
+                    @*
+                        <th>
+                            @Html.DisplayName("Antigocolab")
+                            @Html.DisplayNameFor(model => model.Antigocolab)
+                        </th>
+                    *@
+                    <th>
+                        @Html.DisplayName("Atualcolab")
+                        @* @Html.DisplayNameFor(model => model.Atualcolab)  *@
+                    </th>
+                    @*
+                        <th>
+                            @Html.DisplayName("Dtacompra")
+                            @Html.DisplayNameFor(model => model.Dtacompra)
+                        </th>
+                    *@
+                    <th>
+                        @Html.DisplayName("Status")
+                        @* @Html.DisplayNameFor(model => model.Status)  *@
+                    </th>
+                    @*
+                        <th>
+                            @Html.DisplayName("Estado")
+                            @Html.DisplayNameFor(model => model.Estado)
+                        </th>
+
+                        <th>
+                            @Html.DisplayName("Obs")
+                            @Html.DisplayNameFor(model => model.Obs)
+                        </th>
+                    *@
+                    <th>
+                        Ações
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Imei)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Marca)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Modelo)
+                        </td>
+                        @*
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Antigocolab)
+                            </td>
+                        *@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Atualcolab)
+                        </td>
+                        @*
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dtacompra)
+                            </td>
+                        *@
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        @*
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estado)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Obs)
+                            </td>
+                        *@
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+            </table>
+
+            <div>
+                Página @Model.PageNumber de @Model.PageCount
+
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { pagina = page }))
+            </div>
+
+        </div>
+    </div>
+</section>
+
+

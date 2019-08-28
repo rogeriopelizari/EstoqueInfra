@@ -1,0 +1,40 @@
+﻿@model Estoque.Models.UsuarioLoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<section class="section">
+    @using (Html.BeginForm("Autherize", "Login", FormMethod.Post))
+    {
+        <div class="container m-5">
+            <div class="row">
+                <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-3 offset-xl-4">
+                    <div class="login-brand" align="center">
+                        <img src="~/Content/Imagens/logonavita35x35_transparent.png" />
+                        <br /> <br />
+                        <h4> Estoque Infra </h4>  <br />
+                    </div>                    
+                    <div class="card card-primary">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                @Html.TextBoxFor(model => model.Login, new { @placeholder = "Login", @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                    @Html.PasswordFor(model => model.Senha, new { @placeholder = "Senha", @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button id="btnLogin" type="submit" class="btn btn-primary login-btn btn-block" tabindex="4">Entrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</section>

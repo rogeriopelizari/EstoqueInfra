@@ -1,0 +1,147 @@
+﻿@model Estoque.Models.FuncionarioModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FuncionarioModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matricula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cta365)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cta365)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Setor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Setor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gestor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gestor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dtaadm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dtaadm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dtadem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dtadem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Statad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Statad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Statjira)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Statjira)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Statconflu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Statconflu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Statslack)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Statslack)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Door)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Door)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ponto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ponto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
