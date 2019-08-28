@@ -270,5 +270,50 @@ namespace Estoque.Dao
             }
         }
 
+        //public List<EstoqueFiltroViewModel> filtro (EstoqueFiltroViewModel obj)
+        //{
+        //    List<CelularModel> lista = new List<CelularModel>();
+        //    SqlConnection connection = null;
+        //    try
+        //    {
+        //        using (connection = new SqlConnection(_connectionString))
+        //        {
+        //            connection.Open();
+        //            string query = $"SELECT * FROM Celular";
+
+        //            SqlCommand command = new SqlCommand(query, connection);
+        //            var reader = command.ExecuteReader();
+
+        //            while (reader.Read())
+        //            {
+        //                lista.Add(new CelularModel
+        //                {
+        //                    Id = reader.GetInt32(0),
+        //                    Imei = SafeGetString(reader, 1),
+        //                    Marca = SafeGetString(reader, 2),
+        //                    Modelo = SafeGetString(reader, 3),
+        //                    Antigocolab = SafeGetString(reader, 4),
+        //                    Atualcolab = SafeGetString(reader, 5),
+        //                    Dtacompra = SafeGetString(reader, 6),
+        //                    Status = SafeGetString(reader, 7),
+        //                    Estado = SafeGetString(reader, 8),
+        //                    Obs = SafeGetString(reader, 9)
+        //                });
+        //            }
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //    finally
+        //    {
+        //        if (connection?.State == ConnectionState.Open)
+        //            connection.Close();
+        //    }
+
+        //    return filtro;
+        //}
+
     }
 }

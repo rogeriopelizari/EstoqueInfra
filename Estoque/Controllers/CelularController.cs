@@ -23,15 +23,6 @@ namespace Estoque.Controllers
             return View(lista.ToPagedList(paginat, itensPorPagina));
         }
 
-
-        public ActionResult Index(EstoqueFiltroViewModel filtro)
-        {
-
-            return View();
-        }
-
-
-
         // GET: Celular/Details/5
         public ActionResult Details(int id)
         {
