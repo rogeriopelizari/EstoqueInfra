@@ -201,6 +201,7 @@
     <Compile Include="Models\CelularModel.cs" />
     <Compile Include="Models\FuncionarioModel.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
+    <Compile Include="Models\EstoqueFiltroViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
