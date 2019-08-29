@@ -279,6 +279,7 @@ a.article, a.article:hover {
     .table-responsive {
         display: block;
         width: 100%;
+        margin-bottom: 1rem;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -287,8 +288,24 @@ a.article, a.article:hover {
     .table {
         width: 100%;
         margin-bottom: 1rem;
+        display: table;
+        border-collapse: separate;
+        border-spacing: 2px;
+        border-color: grey;
         background-color: transparent;
     }
+    
+    table { 
+        border-collapse: collapse;
+   }   
+
+        
+     table{
+        display: table;
+        border-collapse: separate;
+        border-spacing: 2px;
+        border-color: grey;
+}       
 
 
     .card {
@@ -299,37 +316,27 @@ a.article, a.article:hover {
         border: none;
         position: relative;
         margin-bottom: 30px;
+}
+
+    .card .card-header {
+        border-bottom-color: #f9f9f9;
+        line-height: 30px;
+        -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+        width: 100%;
     }
 
-        .card .card-header {
-            border-bottom-color: #f9f9f9;
-            line-height: 30px;
-            -ms-flex-item-align: center;
-            -ms-grid-row-align: center;
-            align-self: center;
-            width: 100%;
-        }
-
-        .card .card-header, .card .card-footer, .card .card-body {
-            background-color: transparent;
-        }
-
-    .card-body {
-        -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-        padding: 1.25rem;
+    .card .card-header, .card .card-footer, .card .card-body {
+        background-color: transparent;
     }
 
-    table {
-        border-collapse: collapse;
-    }
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
 
-    table {
-        display: table;
-        border-collapse: separate;
-        border-spacing: 2px;
-        border-color: grey;
-    }
 
     *, ::after, ::before {
         box-sizing: border-box;
