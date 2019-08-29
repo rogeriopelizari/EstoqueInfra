@@ -9,96 +9,98 @@
     Layout = "~/Views/Shared/_LayoutTelaPrincipal.cshtml";
 }
 
+<h2 style="text-align:center"> Linhas </h2>
+
 <p>
     @Html.ActionLink("Novo Cadastro", "Create") | @Html.ActionLink("Home", "Index", "Home")
 </p>
 
-    <section class="section">
-        <div class="container body-content">
-            <div class="row">
-                <table id="tablelayout" class="table table-bordered">
-                    <tr style="text-align:center">
-                        <th>
-                            @Html.DisplayName("Simcard")
-                            @* @Html.DisplayNameFor(model => model.Simcard)  *@
-                        </th>
-                        <th>
-                            @Html.DisplayName("Número")
-                            @* @Html.DisplayNameFor(model => model.Numero) *@
-                        </th>
-                        <th>
-                            @Html.DisplayName("Operadora")
-                            @* @Html.DisplayNameFor(model => model.Operadora)  *@
-                        </th>
-                        @*
+<section class="section">
+    <div class="container body-content">
+        <div class="row">
+            <table id="tablelayout" class="table table-bordered">
+                <tr style="text-align:center">
+                    <th>
+                        @Html.DisplayName("Simcard")
+                        @* @Html.DisplayNameFor(model => model.Simcard)  *@
+                    </th>
+                    <th>
+                        @Html.DisplayName("Número")
+                        @* @Html.DisplayNameFor(model => model.Numero) *@
+                    </th>
+                    <th>
+                        @Html.DisplayName("Operadora")
+                        @* @Html.DisplayNameFor(model => model.Operadora)  *@
+                    </th>
+                    @*
                         <th>
                             @Html.DisplayName("Antcolab")
                             @Html.DisplayNameFor(model => model.Antcolab)
                         </th>
-                        *@
-                        <th>
-                            @Html.DisplayName("Atualcolab")
-                            @* @Html.DisplayNameFor(model => model.Atualcolab)  *@
-                        </th>
-                        <th>
-                            @Html.DisplayName("Status")
-                            @* @Html.DisplayNameFor(model => model.Status)  *@
-                        </th>
-                        @*
+                    *@
+                    <th>
+                        @Html.DisplayName("Atualcolab")
+                        @* @Html.DisplayNameFor(model => model.Atualcolab)  *@
+                    </th>
+                    <th>
+                        @Html.DisplayName("Status")
+                        @* @Html.DisplayNameFor(model => model.Status)  *@
+                    </th>
+                    @*
                         <th>
                             @Html.DisplayName("Obs")
                             @Html.DisplayNameFor(model => model.Obs)
                         </th>
-                        *@
-                        <th>
-                            Ações
-                        </th>
-                    </tr>
+                    *@
+                    <th>
+                        Ações
+                    </th>
+                </tr>
 
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Simcard)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Numero)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Operadora)
-                            </td>
-                            @*
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Simcard)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Numero)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Operadora)
+                        </td>
+                        @*
                             <td>
                                 @Html.DisplayFor(modelItem => item.Antcolab)
                             </td>
-                            *@
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Atualcolab)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Status)
-                            </td>
-                            @*
+                        *@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Atualcolab)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        @*
                             <td>
                                 @Html.DisplayFor(modelItem => item.Obs)
                             </td>
-                            *@
-                            <td style="text-align:center">
-                                @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
-                                @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
-                                @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
-                            </td>
-                        </tr>
-                    }
-                </table>
-                <div>
-                    Página @Model.PageNumber de @Model.PageCount
+                        *@
+                        <td style="text-align:center">
+                            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+            </table>
+            <div>
+                Página @Model.PageNumber de @Model.PageCount
 
-                    @Html.PagedListPager(Model, page => Url.Action("Index", new { pagina = page }))
-                </div>
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { pagina = page }))
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
 

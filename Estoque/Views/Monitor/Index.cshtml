@@ -8,7 +8,7 @@
     Layout = "~/Views/Shared/_LayoutTelaPrincipal.cshtml";
 }
 
-@*<h2>Index</h2>*@
+<h2 style="text-align:center"> Monitores </h2>
 
 <p>
     @Html.ActionLink("Novo Cadastro", "Create") | @Html.ActionLink("Home", "Index", "Home")
@@ -32,38 +32,38 @@
                         @* @Html.DisplayNameFor(model => model.Modelo) *@
                     </th>
                     @*
-                <th>
-                                @Html.DisplayName("Nserie")
-                    @Html.DisplayNameFor(model => model.Nserie)
-                </th>
+                        <th>
+                                        @Html.DisplayName("Nserie")
+                            @Html.DisplayNameFor(model => model.Nserie)
+                        </th>
                     *@
                     <th>
                         @Html.DisplayName("Status")
                         @* @Html.DisplayNameFor(model => model.Status) *@
                     </th>
                     @*
-                <th>
-                @Html.DisplayName("Estado")
-                    @Html.DisplayNameFor(model => model.Estado)
-                </th>
-                <th>
-                                @Html.DisplayName("Antcolab")
-                    @Html.DisplayNameFor(model => model.Antcolab)
-                </th>
+                        <th>
+                        @Html.DisplayName("Estado")
+                            @Html.DisplayNameFor(model => model.Estado)
+                        </th>
+                        <th>
+                                        @Html.DisplayName("Antcolab")
+                            @Html.DisplayNameFor(model => model.Antcolab)
+                        </th>
                     *@
                     <th>
                         @Html.DisplayName("Atualcolab")
                         @* @Html.DisplayNameFor(model => model.Atualcolab) *@
                     </th>
                     @*
-                <th>
-                                @Html.DisplayName("Dtacompra")
-                    @Html.DisplayNameFor(model => model.Dtacompra)
-                </th>
-                <th>
-                                @Html.DisplayName("Obs")
-                    @Html.DisplayNameFor(model => model.Obs)
-                </th>
+                        <th>
+                                        @Html.DisplayName("Dtacompra")
+                            @Html.DisplayNameFor(model => model.Dtacompra)
+                        </th>
+                        <th>
+                                        @Html.DisplayName("Obs")
+                            @Html.DisplayNameFor(model => model.Obs)
+                        </th>
                     *@
                     <th>
                         Ações
@@ -83,31 +83,31 @@
                             @Html.DisplayFor(modelItem => item.Modelo)
                         </td>
                         @*
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nserie)
-                    </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nserie)
+                            </td>
                         *@
                         <td>
                             @Html.DisplayFor(modelItem => item.Status)
                         </td>
                         @*
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Estado)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Antcolab)
-                    </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estado)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Antcolab)
+                            </td>
                         *@
                         <td>
                             @Html.DisplayFor(modelItem => item.Atualcolab)
                         </td>
                         @*
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Dtacompra)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Obs)
-                    </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dtacompra)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Obs)
+                            </td>
                         *@
                         <td style="text-align:center">
                             @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
