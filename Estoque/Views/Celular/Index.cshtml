@@ -8,14 +8,34 @@
     Layout = "~/Views/Shared/_LayoutTelaPrincipal.cshtml";
 }
 
-<h2 style="text-align:center"> Celulares </h2> 
+<h2 style="text-align:center"> Celulares </h2>
 
-<p>
-    @Html.ActionLink("Novo Cadastro", "Create") | @Html.ActionLink("Home", "Index", "Home")
-</p>
+@*<p>
+        @Html.ActionLink("Novo Cadastro", "Create") | @Html.ActionLink("Home", "Index", "Home")
+    </p>*@
+<form action="Index" method="post">
+    <div class="row">
+        <div class="col-md-9 text-left">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Imei</label>
+                    <input class="form-control" type="text" id="imei" name="imei" value="">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 text-left">
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-sm btn-success">Consultar</button>
+            </div>
+            <div class="col-md-3 text-right">
+                <a href="/Celular/Create" class="btn btn-sm btn-primary">Novo</a>
+            </div>
+        </div>
+    </div>
+</form>
 
-<section class="section">
-    <div class="container body-content">
+<div class="row">
+    <div class="col-md-12">
         <div class="table-responsive">
             <table class="table table-bordered">
                 <tr>
@@ -112,15 +132,11 @@
                     </tr>
                 }
             </table>
-
             <div>
                 Página @Model.PageNumber de @Model.PageCount
 
                 @Html.PagedListPager(Model, page => Url.Action("Index", new { pagina = page }))
             </div>
-
         </div>
     </div>
-</section>
-
-
+</div>

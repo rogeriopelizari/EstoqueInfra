@@ -12,13 +12,13 @@ namespace Estoque.Controllers
     public class CelularController : Controller
     {
         // GET: Celular
-        public ViewResult Index(int? pagina)
+        public ViewResult Index(int? pagina, string imei)
         {
             int itensPorPagina = 12;
             int paginat = pagina ?? 1;
 
             List<CelularModel> lista = new List<CelularModel>();
-            lista = new CelularDao().Listar(new CelularModel());
+            lista = new CelularDao().Listar(new CelularModel { Imei = imei });
 
             return View(lista.ToPagedList(paginat, itensPorPagina));
         }
