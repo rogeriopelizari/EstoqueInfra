@@ -6,19 +6,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
-
 namespace Estoque.Controllers
 {
     public class LinhaController : Controller
     {
         // GET: Linha
-        public ViewResult Index(int? pagina)
+        public ViewResult Index(int? pagina, string numero)
         {
             int itensPorPagina = 12;
             int paginat = pagina ?? 1;
 
             List<LinhaModel> lista = new List<LinhaModel>();
-            lista = new LinhaDao().Listar(new LinhaModel());
+            lista = new LinhaDao().Listar(new LinhaModel { Numero = numero });
 
             return View(lista.ToPagedList(paginat, itensPorPagina )) ;
         }

@@ -7,25 +7,24 @@
     <title>Estoque Infra</title>
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    @* <link rel="stylesheet" href="~/Content/bootstrap.min.css" />  *@
     <!-- Our Custom CSS -->
-    <link href="~/Content/style4.css" rel="stylesheet" />   
+    <link href="~/Content/style4.css" rel="stylesheet" />
 </head>
 <body>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Estoque Infra</h3>
+                <strong>
+                    <img src="~/Content/Imagens/logonavita35x35_transparent.png" />
+                </strong>
+            </div>
 
- <div class="wrapper">
-            <!-- Sidebar Holder -->
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>Estoque Infra</h3>
-                    <strong>
-                        <img src="~/Content/Imagens/logonavita35x35_transparent.png" />
-                    </strong>
-                </div>
-
+            <div class="main-sidebar tabindex=" 1" style="overflow:hidden; outline:none" ">
                 <ul class="list-unstyled components">
                     <li class="active">
-                        <a href="~/Home/Index">
+                        <a href="/Home/Index">
                             <i class="glyphicon glyphicon-home"></i>
                             Home
                         </a>
@@ -44,45 +43,43 @@
                         </ul>
                     </li>
                 </ul>
-            </nav>
-
-            <!-- Page Content Holder -->
-            <div id="content">
-                <nav class="navbar navbar-default">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                                <i class="glyphicon glyphicon-align-left"></i>
-                                <span>Menu</span>
-                            </button>
-                        </div>
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                    <a href="#"><span class="glyphicon glyphicon-user"></span> Bem Vindo, @(((Estoque.Models.UsuarioModel)Session["Usuario"]).Nome)!</a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("Index", "Login")">
-                                        <span class="glyphicon glyphicon-log-in">  </span> Logout
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-                <div class="container body-content">
-                    <section class="section">
-                        @RenderBody()
-                    </section>
-                </div>
             </div>
-
+        </nav>
+        <!-- Page Content Holder -->
+        <div id="content">
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="glyphicon glyphicon-align-left"></i>
+                            <span>Menu</span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#"><span class="glyphicon glyphicon-user"></span> Bem Vindo, @(((Estoque.Models.UsuarioModel)Session["Usuario"]).Nome)!</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "Login")">
+                                    <span class="glyphicon glyphicon-log-in">  </span> Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="container body-content">
+                <section class="section">
+                    @RenderBody()
+                </section>
+            </div>
         </div>
+    </div>
 
     <!-- jQuery CDN -->
     @*<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>  *@
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-
 
     <!-- Bootstrap Js CDN -->
     @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> *@
@@ -96,13 +93,14 @@
         });
     </script>
 
-         <footer>
+    <div class="main-footer">
+        <footer class="card-footer">
             <div class="text-center">
-                <p> &copy; @DateTime.Now.Year - Infra.Navita - <small>1.0.0-PRD</small></p>
+                &copy; @DateTime.Now.Year - Infra.Navita - <small>1.0.0-PRD</small>
             </div>
         </footer>
+    </div>
     @RenderSection("scripts", required: false)
-
 </body>
 </html>
 

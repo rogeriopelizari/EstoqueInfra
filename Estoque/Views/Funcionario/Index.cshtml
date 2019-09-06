@@ -1,6 +1,4 @@
-﻿@* @model IEnumerable<Estoque.Models.FuncionarioModel>  *@
-
-@using PagedList.Mvc;
+﻿@using PagedList.Mvc;
 @model PagedList.IPagedList<Estoque.Models.FuncionarioModel>
 
 @{
@@ -8,82 +6,41 @@
     Layout = "~/Views/Shared/_LayoutTelaPrincipal.cshtml";
 }
 
-<h2 style="text-align:center"> Colaboradores </h2>
+<form action="Index" method="post">
+    <div class="row">
+        <div class="col-md-9 text-left">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Insira o Nome:" id="nome" name="nome" value="">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 float-right text-right mt-4">
+            <button type="submit" class="btn btn-sm btn-success">Consultar</button>
+            <a href="/Funcionario/Create" class="btn btn-sm btn-primary">Novo</a>
+        </div>
+    </div>
+</form>
 
-<p>
-    @Html.ActionLink("Novo Cadastro", "Create") | @Html.ActionLink("Home", "Index", "Home")
-</p>
-
-<section class="section">
-    <div class="container body-content">
-        <div class="row">
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
             <table class="table table-bordered">
                 <tr>
                     <th>
                         @Html.DisplayName("Matricula")
-                        @* @Html.DisplayNameFor(model => model.Matricula)  *@
                     </th>
                     <th>
                         @Html.DisplayName("Nome")
-                        @* @Html.DisplayNameFor(model => model.Nome)  *@
                     </th>
                     <th>
                         @Html.DisplayName("Email")
-                        @* @Html.DisplayNameFor(model => model.Email)  *@
                     </th>
-                    @*
-                        <th>
-                            @Html.DisplayName("Cta365")
-                            @Html.DisplayNameFor(model => model.Cta365)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Cargo)
-                        </th>
-                    *@
                     <th>
                         @Html.DisplayName("Setor")
-                        @* @Html.DisplayNameFor(model => model.Setor)  *@
                     </th>
-                    @*
-                        <th>
-                        @Html.DisplayName("Gestor")
-                            @Html.DisplayNameFor(model => model.Gestor)
-                        </th>
-                        <th>
-                        @Html.DisplayName("Dtaadm")
-                            @Html.DisplayNameFor(model => model.Dtaadm)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Dtadem)
-                        </th>
-                        <th>
-                        @Html.DisplayName("Statad")
-                            @Html.DisplayNameFor(model => model.Statad)
-                        </th>
-                        <th>
-                                    @Html.DisplayName("Statjira")
-                            @Html.DisplayNameFor(model => model.Statjira)
-                        </th>
-                        <th>
-                                    @Html.DisplayName("Statconflu")
-                            @Html.DisplayNameFor(model => model.Statconflu)
-                        </th>
-                        <th>
-                                    @Html.DisplayName("Statslack")
-                            @Html.DisplayNameFor(model => model.Statslack)
-                        </th>
-                        <th>
-                                    @Html.DisplayName("Door")
-                            @Html.DisplayNameFor(model => model.Door)
-                        </th>
-                        <th>
-                                    @Html.DisplayName("Ponto")
-                            @Html.DisplayNameFor(model => model.Ponto)
-                        </th>
-                    *@
                     <th>
                         @Html.DisplayName("Status")
-                        @* @Html.DisplayNameFor(model => model.Status)  *@
                     </th>
                     <th>
                         Ações
@@ -102,46 +59,9 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Email)
                         </td>
-                        @*
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Cta365)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Cargo)
-                            </td>
-                        *@
                         <td>
                             @Html.DisplayFor(modelItem => item.Setor)
                         </td>
-                        @*
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Gestor)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Dtaadm)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Dtadem)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Statad)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Statjira)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Statconflu)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Statslack)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Door)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Ponto)
-                            </td>
-                        *@
                         <td style="text-align:center">
                             @Html.DisplayFor(modelItem => item.Status)
                         </td>
@@ -153,11 +73,14 @@
                     </tr>
                 }
             </table>
-            <div>
+            <div class="col-md-4 text-left">
+                <span> Total de @Model.TotalItemCount registros. </span>
+            </div>
+            <div class="col-md-8 text-right">
                 Página @Model.PageNumber de @Model.PageCount
-
                 @Html.PagedListPager(Model, page => Url.Action("Index", new { pagina = page }))
             </div>
         </div>
     </div>
-</section>
+</div>
+

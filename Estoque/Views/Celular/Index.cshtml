@@ -1,6 +1,4 @@
-﻿@* @model IEnumerable<Estoque.Models.CelularModel>  *@
-
-@using PagedList.Mvc;
+﻿@using PagedList.Mvc;
 @model PagedList.IPagedList<Estoque.Models.CelularModel>
 
 @{
@@ -8,28 +6,18 @@
     Layout = "~/Views/Shared/_LayoutTelaPrincipal.cshtml";
 }
 
-<h2 style="text-align:center"> Celulares </h2>
-
-@*<p>
-        @Html.ActionLink("Novo Cadastro", "Create") | @Html.ActionLink("Home", "Index", "Home")
-    </p>*@
 <form action="Index" method="post">
     <div class="row">
         <div class="col-md-9 text-left">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Imei</label>
-                    <input class="form-control" type="text" id="imei" name="imei" value="">
+                    <input class="form-control" type="text" placeholder="Insira o Imei:" id="imei" name="imei" value="">
                 </div>
             </div>
         </div>
-        <div class="col-md-3 text-left">
-            <div class="col-md-3">
-                <button type="submit" class="btn btn-sm btn-success">Consultar</button>
-            </div>
-            <div class="col-md-3 text-right">
-                <a href="/Celular/Create" class="btn btn-sm btn-primary">Novo</a>
-            </div>
+        <div class="col-md-3 float-right text-right mt-4">
+            <button type="submit" class="btn btn-sm btn-success">Consultar</button>
+            <a href="/Celular/Create" class="btn btn-sm btn-primary">Novo</a>
         </div>
     </div>
 </form>
@@ -41,47 +29,19 @@
                 <tr>
                     <th>
                         @Html.DisplayName("Imei")
-                        @* @Html.DisplayNameFor(model => model.Imei)  *@
                     </th>
                     <th>
                         @Html.DisplayName("Marca")
-                        @* @Html.DisplayNameFor(model => model.Marca)  *@
                     </th>
                     <th>
-                        @Html.DisplayName("Marca")
-                        @* @Html.DisplayNameFor(model => model.Modelo)  *@
+                        @Html.DisplayName("Modelo")
                     </th>
-                    @*
-                        <th>
-                            @Html.DisplayName("Antigocolab")
-                            @Html.DisplayNameFor(model => model.Antigocolab)
-                        </th>
-                    *@
                     <th>
-                        @Html.DisplayName("Atualcolab")
-                        @* @Html.DisplayNameFor(model => model.Atualcolab)  *@
+                        @Html.DisplayName("Atual Colaborador")
                     </th>
-                    @*
-                        <th>
-                            @Html.DisplayName("Dtacompra")
-                            @Html.DisplayNameFor(model => model.Dtacompra)
-                        </th>
-                    *@
                     <th>
                         @Html.DisplayName("Status")
-                        @* @Html.DisplayNameFor(model => model.Status)  *@
                     </th>
-                    @*
-                        <th>
-                            @Html.DisplayName("Estado")
-                            @Html.DisplayNameFor(model => model.Estado)
-                        </th>
-
-                        <th>
-                            @Html.DisplayName("Obs")
-                            @Html.DisplayNameFor(model => model.Obs)
-                        </th>
-                    *@
                     <th>
                         Ações
                     </th>
@@ -99,31 +59,12 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Modelo)
                         </td>
-                        @*
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Antigocolab)
-                            </td>
-                        *@
                         <td>
                             @Html.DisplayFor(modelItem => item.Atualcolab)
                         </td>
-                        @*
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Dtacompra)
-                            </td>
-                        *@
-
                         <td>
                             @Html.DisplayFor(modelItem => item.Status)
                         </td>
-                        @*
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Estado)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Obs)
-                            </td>
-                        *@
                         <td>
                             @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
                             @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
@@ -132,9 +73,11 @@
                     </tr>
                 }
             </table>
-            <div>
+            <div class="col-md-4 text-left">
+                Total de @Model.TotalItemCount registros.
+            </div>
+            <div class="col-md-8 text-right">
                 Página @Model.PageNumber de @Model.PageCount
-
                 @Html.PagedListPager(Model, page => Url.Action("Index", new { pagina = page }))
             </div>
         </div>

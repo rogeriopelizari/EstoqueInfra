@@ -12,13 +12,13 @@ namespace Estoque.Controllers
     public class MonitorController : Controller
     {
         // GET: Monitor
-        public ViewResult Index(int? pagina)
+        public ViewResult Index(int? pagina, string patrimonio)
         {
             int itensPorPagina = 12;
             int paginat = pagina ?? 1;
 
             List<MonitorModel> lista = new List<MonitorModel>();
-            lista = new MonitorDao().Listar(new MonitorModel());
+            lista = new MonitorDao().Listar(new MonitorModel { Patrimonio = patrimonio });
 
             return View(lista.ToPagedList(paginat, itensPorPagina));
         }

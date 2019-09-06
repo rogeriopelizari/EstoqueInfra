@@ -6,7 +6,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-
 namespace Estoque.Dao
 {
     public class FuncionarioDao
@@ -34,7 +33,13 @@ namespace Estoque.Dao
                 using (connection = new SqlConnection(_connectionString))
                 {
                     connection.Open();
-                    string query = $"SELECT * FROM Funcionario";
+                    string query = $"SELECT * FROM Funcionario WHERE 1 = 1";
+
+                    if (obj != null)
+                    {
+                        if (!string.IsNullOrWhiteSpace(obj.Nome))
+                            query += $" AND Nome LIKE '{obj.Nome}%'";
+                    }
 
                     SqlCommand command = new SqlCommand(query, connection);
                     var reader = command.ExecuteReader();

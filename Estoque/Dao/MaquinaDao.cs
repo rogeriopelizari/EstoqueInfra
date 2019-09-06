@@ -34,7 +34,13 @@ namespace Estoque.Dao
                 using (connection = new SqlConnection(_connectionString))
                 {
                     connection.Open();
-                    string query = $"SELECT * FROM Maquina";
+                    string query = $"SELECT * FROM Maquina WHERE 1 = 1";
+
+                    if (obj != null)
+                    {
+                        if (!string.IsNullOrWhiteSpace(obj.Patrimonio))
+                            query += $" AND Patrimonio LIKE '{obj.Patrimonio}%'";
+                    }
 
                     SqlCommand command = new SqlCommand(query, connection);
                     var reader = command.ExecuteReader();

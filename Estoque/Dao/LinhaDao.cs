@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 
 namespace Estoque.Dao
 {
     public class LinhaDao
     {
-        private string _connectionString;
+        private readonly string _connectionString;
 
         public LinhaDao()
         {
@@ -34,7 +32,13 @@ namespace Estoque.Dao
                 using (connection = new SqlConnection(_connectionString))
                 {
                     connection.Open();
-                    string query = $"SELECT * FROM Linha";
+                    string query = $"SELECT * FROM Linha WHERE 1 = 1";
+
+                    if (obj != null)
+                    {
+                        if (!string.IsNullOrWhiteSpace(obj.Numero))
+                            query += $" AND Numero LIKE '{obj.Numero}%'";
+                    }
 
                     SqlCommand command = new SqlCommand(query, connection);
                     var reader = command.ExecuteReader();
@@ -45,7 +49,7 @@ namespace Estoque.Dao
                         {
                             Id = reader.GetInt32(0),
                             Simcard = SafeGetString(reader, 1),
-                            Numero = reader.GetInt32(2),
+                            Numero = reader.GetString(2),
                             Operadora = SafeGetString(reader, 3),
                             Antcolab = SafeGetString(reader, 4),
                             Atualcolab = SafeGetString(reader, 5),
@@ -88,7 +92,7 @@ namespace Estoque.Dao
                         {
                             Id = reader.GetInt32(0),
                             Simcard = SafeGetString(reader, 1),
-                            Numero = reader.GetInt32(2),
+                            Numero = reader.GetString(2),
                             Operadora = SafeGetString(reader, 3),
                             Antcolab = SafeGetString(reader, 4),
                             Atualcolab = SafeGetString(reader, 5),

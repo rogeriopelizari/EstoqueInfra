@@ -1,6 +1,4 @@
-﻿@* @model IEnumerable<Estoque.Models.MaquinaModel>  *@
-
-@using PagedList.Mvc;
+﻿@using PagedList.Mvc;
 @model PagedList.IPagedList<Estoque.Models.MaquinaModel>
 
 @{
@@ -8,87 +6,48 @@
     Layout = "~/Views/Shared/_LayoutTelaPrincipal.cshtml";
 }
 
-<h2 style="text-align:center"> Máquinas </h2>
+<form action="Index" method="post">
+    <div class="row">
+        <div class="col-md-9 text-left">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Insira o Patrimônio:" id="patrimonio" name="patrimonio" value="">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 float-right text-right mt-4">
+            <button type="submit" class="btn btn-sm btn-success">Consultar</button>
+            <a href="/Maquina/Create" class="btn btn-sm btn-primary">Novo</a>
+        </div>
+    </div>
+</form>
 
-<p>
-    @Html.ActionLink("Novo Cadastro", "Create") | @Html.ActionLink("Home", "Index", "Home")
-</p>
-
-<section class="section">
-    <div class="container body-content">
-        <div class="row">
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
             <table class="table table-bordered">
-                <tr style="text-align:center">
+                <tr>
                     <th>
                         @Html.DisplayName("Patrimonio")
-                        @*  @Html.DisplayNameFor(model => model.Patrimonio)  *@
                     </th>
                     <th>
                         @Html.DisplayName("Marca")
-                        @* @Html.DisplayNameFor(model => model.Marca) *@
                     </th>
                     <th>
                         @Html.DisplayName("Modelo")
-                        @* @Html.DisplayNameFor(model => model.Modelo) *@
                     </th>
                     <th>
                         @Html.DisplayName("Servtag")
-                        @* @Html.DisplayNameFor(model => model.Servtag) *@
                     </th>
                     <th>
                         @Html.DisplayName("Tipo")
-                        @* @Html.DisplayNameFor(model => model.Tipo) *@
                     </th>
-                    @*
-                        <th>
-                            @Html.DisplayName("Numserie")
-                            @Html.DisplayNameFor(model => model.Numserie)
-                        </th>
-                    *@
                     <th>
                         @Html.DisplayName("Status")
-                        @* @Html.DisplayNameFor(model => model.Status) *@
                     </th>
-                    @*
-                        <th>
-                            @Html.DisplayName("Estado")
-                            @Html.DisplayNameFor(model => model.Estado)
-                        </th>
-                        <th>
-                            @Html.DisplayName("Proc")
-                            @Html.DisplayNameFor(model => model.Proc)
-                        </th>
-                        <th>
-                            @Html.DisplayName("Mem")
-                            @Html.DisplayNameFor(model => model.Mem)
-                        </th>
-                        <th>
-                            @Html.DisplayName("Hd")
-                            @Html.DisplayNameFor(model => model.Hd)
-                        </th>
-                        <th>
-                            @Html.DisplayName("Antcolab")
-                            @Html.DisplayNameFor(model => model.Antcolab)
-                        </th>
-                    *@
                     <th>
                         @Html.DisplayName("Atualcolab")
-                        @* @Html.DisplayNameFor(model => model.Atualcolab) *@
                     </th>
-                    @*
-                        <th>
-                            @Html.DisplayName("Dtacompra")
-                            @Html.DisplayNameFor(model => model.Dtacompra)
-                        </th>
-                        <th>
-                            @Html.DisplayName("Dtatroca")
-                            @Html.DisplayNameFor(model => model.Dtatroca)
-                        </th>
-                        <th>
-                            @Html.DisplayName("Obs")
-                            @Html.DisplayNameFor(model => model.Obs)
-                        </th>
-                    *@
                     <th>
                         Ações
                     </th>
@@ -112,46 +71,13 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Tipo)
                         </td>
-                        @*
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Numserie)
-                            </td>
-                        *@
                         <td>
                             @Html.DisplayFor(modelItem => item.Status)
                         </td>
-                        @*
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Estado)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Proc)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Mem)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Hd)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Antcolab)
-                            </td>
-                        *@
                         <td>
                             @Html.DisplayFor(modelItem => item.Atualcolab)
                         </td>
-                        @*
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Dtacompra)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Dtatroca)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Obs)
-                            </td>
-                        *@
-                        <td style="text-align:center">
+                        <td>
                             @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
                             @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
                             @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
@@ -159,15 +85,16 @@
                     </tr>
                 }
             </table>
-
-            <div>
+            <div class="col-md-4 text-left">
+                <span> Total de @Model.TotalItemCount registros. </span>
+            </div>
+            <div class="col-md-8 text-right">
                 Página @Model.PageNumber de @Model.PageCount
-
                 @Html.PagedListPager(Model, page => Url.Action("Index", new { pagina = page }))
             </div>
         </div>
     </div>
-</section>
+</div>
 
 
 

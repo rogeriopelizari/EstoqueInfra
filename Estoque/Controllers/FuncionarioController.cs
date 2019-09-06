@@ -6,19 +6,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
-
 namespace Estoque.Controllers
 {
     public class FuncionarioController : Controller
     {
         // GET: Funcionario
-        public ViewResult Index(int? pagina)
+        public ViewResult Index(int? pagina, string nome)
         {
             int itensPorPagina = 12;
             int paginat = pagina ?? 1;
 
             List<FuncionarioModel> lista = new List<FuncionarioModel>();
-            lista = new FuncionarioDao().Listar(new FuncionarioModel());
+            lista = new FuncionarioDao().Listar(new FuncionarioModel { Nome = nome });
 
             return View(lista.ToPagedList(paginat, itensPorPagina));
         }

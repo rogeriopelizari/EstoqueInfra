@@ -55,17 +55,19 @@ i, span {
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
+    min-width: 200px;
+    max-width: 200px;
     background: #7386D5;
     color: #fff;
     transition: all 0.3s;
+    height: inherit;
 }
 
     #sidebar.active {
-        min-width: 80px;
-        max-width: 80px;
+        min-width: 100px;
+        max-width: 100px;
         text-align: center;
+        height: auto;
     }
 
         #sidebar.active .sidebar-header h3, #sidebar.active .CTAs {
@@ -276,6 +278,12 @@ a.article, a.article:hover {
         text-align: center !important;
     }
 
+    label {
+        display: inline-block;
+        margin-bottom: .5rem;
+        text-align:center;
+    }
+
     .table-responsive {
         display: block;
         width: 100%;
@@ -285,6 +293,7 @@ a.article, a.article:hover {
         -ms-overflow-style: -ms-autohiding-scrollbar;
     }
 
+
     .table {
         width: 100%;
         margin-bottom: 1rem;
@@ -292,7 +301,7 @@ a.article, a.article:hover {
         border-collapse: separate;
         border-spacing: 2px;
         border-color: grey;
-        background-color: transparent;
+        background-color: transparent;      
     }
     
     table { 
@@ -305,8 +314,7 @@ a.article, a.article:hover {
         border-collapse: separate;
         border-spacing: 2px;
         border-color: grey;
-}       
-
+}
 
     .card {
         -webkit-box-shadow: 0 0 40px rgba(0,0,0,.05);
@@ -335,6 +343,10 @@ a.article, a.article:hover {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 1.25rem;
+}
+
+.card-footer {
+   color:black;
 }
 
 
@@ -373,6 +385,16 @@ a.article, a.article:hover {
         text-align: center;
         height: 60px;
         line-height: 60px;
+    }
+
+    .main-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        z-index: 880;
+        box-shadow: 0 0 40px rgba(0, 0, 0, .05);
     }
 
     .main-sidebar .sidebar-brand a {

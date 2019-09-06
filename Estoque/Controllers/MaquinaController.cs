@@ -12,13 +12,13 @@ namespace Estoque.Controllers
     public class MaquinaController : Controller
     {
         // GET: Maquina
-        public ViewResult Index(int? pagina)
+        public ViewResult Index(int? pagina, string patrimonio)
         {
             int itensPorPagina = 12;
             int paginat = pagina ?? 1;
 
             List<MaquinaModel> lista = new List<MaquinaModel>();
-            lista = new MaquinaDao().Listar(new MaquinaModel());
+            lista = new MaquinaDao().Listar(new MaquinaModel { Patrimonio = patrimonio });
 
             return View(lista.ToPagedList(paginat, itensPorPagina));
         }
