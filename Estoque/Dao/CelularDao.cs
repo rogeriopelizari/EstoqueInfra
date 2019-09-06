@@ -40,9 +40,6 @@ namespace Estoque.Dao
                     {
                         if (!string.IsNullOrWhiteSpace(obj.Imei))
                             query += $" AND Imei LIKE '{obj.Imei}%'";
-
-                        if (!string.IsNullOrWhiteSpace(obj.Marca))
-                            query += $" AND Marca LIKE '{obj.Marca}%'";
                     }
 
                     SqlCommand command = new SqlCommand(query, connection);
