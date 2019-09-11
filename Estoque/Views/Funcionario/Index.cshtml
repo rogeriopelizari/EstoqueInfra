@@ -26,27 +26,28 @@
     <div class="col-md-12">
         <div class="table-responsive">
             <table class="table table-bordered">
-                <tr>
-                    <th>
-                        @Html.DisplayName("Matricula")
-                    </th>
-                    <th>
-                        @Html.DisplayName("Nome")
-                    </th>
-                    <th>
-                        @Html.DisplayName("Email")
-                    </th>
-                    <th>
-                        @Html.DisplayName("Setor")
-                    </th>
-                    <th>
-                        @Html.DisplayName("Status")
-                    </th>
-                    <th>
-                        Ações
-                    </th>
-                </tr>
-
+                <thead class="text-center">
+                    <tr>
+                        <th style="text-align:center">
+                            @Html.DisplayName("Matricula")
+                        </th>
+                        <th style="text-align:center">
+                            @Html.DisplayName("Nome")
+                        </th>
+                        <th style="text-align:center">
+                            @Html.DisplayName("Email")
+                        </th>
+                        <th style="text-align:center">
+                            @Html.DisplayName("Setor")
+                        </th>
+                        <th style="text-align:center">
+                            @Html.DisplayName("Status")
+                        </th>
+                        <th style="text-align:center">
+                            Ações
+                        </th>
+                    </tr>
+                </thead>
                 @foreach (var item in Model)
                 {
                     <tr>
@@ -65,7 +66,7 @@
                         <td style="text-align:center">
                             @Html.DisplayFor(modelItem => item.Status)
                         </td>
-                        <td>
+                        <td style="text-align:center">
                             @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
                             @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
                             @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
@@ -77,7 +78,7 @@
                 <span> Total de @Model.TotalItemCount registros. </span>
             </div>
             <div class="col-md-8 text-right">
-                Página @Model.PageNumber de @Model.PageCount
+                @* Página @Model.PageNumber de @Model.PageCount *@
                 @Html.PagedListPager(Model, page => Url.Action("Index", new { pagina = page }))
             </div>
         </div>
