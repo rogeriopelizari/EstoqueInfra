@@ -40,6 +40,7 @@ namespace Estoque.Dao
                         if (!string.IsNullOrWhiteSpace(obj.Nome))
                             query += $" AND Nome LIKE '{obj.Nome}%'";
                     }
+                            query += $" ORDER BY Nome";
 
                     SqlCommand command = new SqlCommand(query, connection);
                     var reader = command.ExecuteReader();
